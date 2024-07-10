@@ -52,7 +52,6 @@ export const fetchBeanByTitle = createAsyncThunk<
   try {
     const url = `https://jellybellywikiapi.onrender.com/api/beans?flavorName=${title}`;
     const { data } = await axios.get(url);
-    console.log(data.items[0]);
     return data.items[0];
   } catch (e) {
     if (e instanceof Error) {
